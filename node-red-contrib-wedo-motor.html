@@ -1,0 +1,66 @@
+
+<script type="text/x-red" data-template-name="wedo-motor">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-motor"><i class="icon-tag"></i> Motor</label>
+        <input type="radio" id="node-input-motor"> A
+        <input type="radio" id="node-input-motor"> B
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-direction"><i class="icon-tag"></i> Direction</label>
+        <input type="radio" id="node-input-name" placeholder="0 .. +100"> left
+        <input type="radio" id="node-input-name" placeholder="0 .. +100"> right
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-speed"><i class="icon-tag"></i> Speed</label>
+        <input type="text" id="node-input-speed" placeholder="0 .. +100">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-duration"><i class="icon-tag"></i> Duration (sec)</label>
+        <input type="text" id="node-input-duration" placeholder="0 .. +100">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="alasql">
+    <p>A Node-RED node to use LEGO WeDo motor.</p>
+    <ul>
+    <li>
+        <p><code>Direction</code> specify the direction of rotation</p>
+    </li>
+    <li>
+        <p><code>Speed</code> defines the rotation speed from 0 to 100. If you specify 0 speed then the motor stops.</p>
+    </li>
+    <li>
+        <p><code>Duration</code> defines the time of rotation in seconds. If value is not defined then the motor won't stop and you have to stop it with another node with zero speed.</p>
+    </li>
+    </ul>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('wedo-motor',{
+        category: 'advanced',
+        color:"#f7df3e",
+        inputs:1,
+        outputs:0,
+        defaults: {
+            name: {value:''},
+            direction: {value:'left'},
+            speed:{value:0},
+            duration:{value:''}
+        },
+        icon: "alasql.png",
+        label: function() {
+            return this.name||"wedo-motor";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
