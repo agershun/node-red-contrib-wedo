@@ -3,7 +3,6 @@ module.exports = function(RED) {
 	var WeDo = require('wedo-support');
 	var wd = new WeDo.WeDo();
 
-
 	function WeDoMotorNode(config) {
 		RED.nodes.createNode(this,config);
         var node = this;
@@ -14,7 +13,7 @@ module.exports = function(RED) {
 
 		node.on("input", function(msg) {
 			var motor = 'motor'+this.motor;
-			try() {
+			try {
 				wd[motor] = (motor.direction == 'left' ? 1 : -1) * motor.speed;
 				if(this.duration) {
 					setTimeout(function(){
@@ -31,6 +30,7 @@ module.exports = function(RED) {
 			}
 		});
 			
-	}
+	};
+	
 	RED.nodes.registerType("wedo-motor",WeDoMotorNode);
 };

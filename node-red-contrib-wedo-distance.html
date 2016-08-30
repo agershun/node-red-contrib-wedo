@@ -1,10 +1,10 @@
 
-<script type="text/x-red" data-template-name="wedo-motor">
+<script type="text/x-red" data-template-name="wedo-distance">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
-
+<!--
     <div class="form-row">
         <label for="node-input-motor"><i class="icon-tag"></i> Motor</label>
         <input type="radio" id="node-input-motor"> A
@@ -26,11 +26,12 @@
         <label for="node-input-duration"><i class="icon-tag"></i> Duration (sec)</label>
         <input type="text" id="node-input-duration" placeholder="0 .. +100">
     </div>
+-->
 </script>
 
-<script type="text/x-red" data-help-name="wedo-motor">
-    <p>A Node-RED node to use LEGO WeDo motor.</p>
-    <ul>
+<script type="text/x-red" data-help-name="wedo-distance">
+    <p>A Node-RED node to use LEGO WeDo distance sensor.</p>
+<!--    <ul>
     <li>
         <p><code>Direction</code> specify the direction of rotation</p>
     </li>
@@ -41,24 +42,25 @@
         <p><code>Duration</code> defines the time of rotation in seconds. If value is not defined then the motor won't stop and you have to stop it with another node with zero speed.</p>
     </li>
     </ul>
+-->
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('wedo-motor',{
+    RED.nodes.registerType('wedo-distance',{
         category: 'advanced',
         color:"#f7df3e",
         inputs:1,
         outputs:1,
         defaults: {
             name: {value:''},
-            motor: {value:'A'},
-            direction: {value:'left'},
-            speed:{value:0},
-            duration:{value:''}
+            // motor: {value:'A'},
+            // direction: {value:'left'},
+            // speed:{value:0},
+            // duration:{value:''}
         },
 //        icon: "alasql.png",
         label: function() {
-            return this.name||"wedo-motor";
+            return this.name||"wedo-distance";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";

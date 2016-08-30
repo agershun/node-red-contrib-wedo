@@ -1,5 +1,7 @@
 # Node-RED components for LEGO WeDo 
 
+Work in progress...
+
 Author: Andrey Gershun, 2016
 
 Based on [node-support](github.com/mdnorman/WeDo-Node) package by [Michael D. Norman](https://github.com/mdnorman).
