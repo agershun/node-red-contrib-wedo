@@ -13,12 +13,20 @@ module.exports = function(RED) {
 
 		node.on("input", function(msg) {
 			// var motor = 'motor'+this.motor;
-			// try {
+			try {
 			// 	wd[motor] = (motor.direction == 'left' ? 1 : -1) * motor.speed;
 			// 	if(this.duration) {
 			// 		setTimeout(function(){
 			// 			wd[motor] = 0;
-						node.send({payload:wd.tilt});
+						var tilt = wd.tilt;
+						var x = 0, y=0;
+						switch(tilt) {
+							case 'left': x = -1; break;
+							case 'right': x = 1; break;
+							case 'forward': y = 1; break;
+							case 'back': y = -1; break;
+						};
+						node.send({payload:tilt, x:x, y:y});
 				// 	},this.duration);
 				// } else {
 				// 	// Do nothing

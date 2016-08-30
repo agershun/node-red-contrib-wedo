@@ -34,18 +34,18 @@
 <script type="text/x-red" data-help-name="wedo-tilt">
     <p>A Node-RED node to use LEGO WeDo tilt sensor.</p>
 
-<!--    <ul>
+    <p>The node returns <code>msg</code> with properties:</p>
+    <ul>
     <li>
-        <p><code>Direction</code> specify the direction of rotation</p>
+        <p><code>payload</code> - position of the tilt sensor (<code>"left"</code>, <code>"right"</code>, <code>"forward"</code>, <code>"back"</code> or <code>"flat"</code>)</p>
     </li>
     <li>
-        <p><code>Speed</code> defines the rotation speed from 0 to 100. If you specify 0 speed then the motor stops.</p>
+        <p><code>x</code> - -1, 0, or 1</p>
     </li>
     <li>
-        <p><code>Duration</code> defines the time of rotation in seconds. If value is not defined then the motor won't stop and you have to stop it with another node with zero speed.</p>
+        <p><code>y</code> - -1, 0, or 1</p>
     </li>
     </ul>
--->
 </script>
 
 <script type="text/javascript">

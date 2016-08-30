@@ -3,7 +3,7 @@ module.exports = function(RED) {
 	var WeDo = require('wedo-support');
 	var wd = new WeDo.WeDo();
 
-	function WeDoDistanceNode(config) {
+	function WeDoMotionNode(config) {
 		RED.nodes.createNode(this,config);
         var node = this;
         // node.motor = config.motor;
@@ -32,5 +32,5 @@ module.exports = function(RED) {
 			
 	};
 	
-	RED.nodes.registerType("wedo-distance",WeDoDistanceNode);
+	RED.nodes.registerType("wedo-motion",WeDoMotionNode);
 };

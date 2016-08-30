@@ -1,5 +1,5 @@
 
-<script type="text/x-red" data-template-name="wedo-distance">
+<script type="text/x-red" data-template-name="wedo-motion">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -29,8 +29,8 @@
 -->
 </script>
 
-<script type="text/x-red" data-help-name="wedo-distance">
-    <p>A Node-RED node to use LEGO WeDo distance sensor.</p>
+<script type="text/x-red" data-help-name="wedo-motion">
+    <p>A Node-RED node to use LEGO WeDo motion sensor.</p>
 <!--    <ul>
     <li>
         <p><code>Direction</code> specify the direction of rotation</p>
@@ -46,7 +46,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('wedo-distance',{
+    RED.nodes.registerType('wedo-motion',{
         category: 'advanced',
         color:"#f7df3e",
         inputs:1,
@@ -60,7 +60,7 @@
         },
 //        icon: "alasql.png",
         label: function() {
-            return this.name||"wedo-distance";
+            return this.name||"wedo-motion";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";

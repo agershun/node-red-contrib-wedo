@@ -15,13 +15,15 @@
 		"lego",
 		"wedo",
 		"sensor",
+		"motion",
+		"tilt",
 		"motor"
     ],
 	"node-red": {
 		"nodes": {
 			"wedo-motor": "node-red-contrib-wedo-motor.js",
 			"wedo-tilt": "node-red-contrib-wedo-tilt.js",
-			"wedo-distance": "node-red-contrib-wedo-distance.js"
+			"wedo-distance": "node-red-contrib-wedo-motion.js"
 		}
 	}
 }
